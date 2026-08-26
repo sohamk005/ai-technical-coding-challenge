@@ -1,2 +1,3 @@
-// Base types placeholder for Milestone 0
+export * from './splitBill';
+
 export type TabType = 'split-bill' | 'parking';

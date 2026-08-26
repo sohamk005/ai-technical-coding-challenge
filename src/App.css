@@ -1,21 +1,65 @@
-.app-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1.5rem 1rem;
+}
+
+.placeholder-tab-container {
+  max-width: 600px;
+  margin: 3rem auto;
   text-align: center;
 }
 
-.app-header {
-  margin-bottom: 2rem;
+.placeholder-card {
+  background-color: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 3rem 2rem;
 }
 
-.app-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #1e293b;
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
-.app-header p {
+.placeholder-card h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.placeholder-card p {
   color: #64748b;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.btn-back-to-active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-back-to-active:hover {
+  background-color: #1d4ed8;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  border-top: 1px solid #e2e8f0;
+  background-color: #ffffff;
 }

@@ -220,13 +220,22 @@ Wait for human review.
 
 # Prompt 2 — Split Bill MVP
 
-*To be added after the Split Bill implementation prompt is given to Antigravity.*
+# Milestone 1 — Split Bill Complete MVP
+
+Implemented the complete Split Bill feature MVP:
+- Pure calculation engine (`src/logic/splitBill.ts`) computing subtotal, tip amount, tax amount, grand total, and per-person split with 2-decimal currency rounding.
+- Real-time reactive input validation rejecting empty/negative bills, negative tip/tax, party size < 1, and non-numeric values.
+- Immediate dynamic recalculations as inputs change.
+- Transparent calculation breakdown with itemized table and per-person division formula.
+- Clear in-UI explanation of the equal split rounding model and remainder-cent allocation strategy.
+- Resilient localStorage history service (`src/services/historyStorage.ts`) supporting save, view, individual delete, and clear all with corrupted data fallback.
+- Unit tests (`src/logic/splitBill.test.ts` and `src/services/historyStorage.test.ts`) covering all core requirements and edge cases.
 
 ---
 
 # Prompt 3 — Split Bill History
 
-*To be added after the history implementation prompt is given to Antigravity.*
+*Implemented together in Milestone 1 per prompt instructions.*
 
 ---
 
@@ -262,9 +271,9 @@ Wait for human review.
 
 # Iteration Notes
 
-Important corrections, issues, and AI-assisted iterations will be recorded here during implementation.
+- **Milestone 0**: Initialized Vite + React + TypeScript + Vitest foundation, verified build and test runners.
+- **Milestone 1**: Implemented Split Bill calculator pure logic, reactive validation, transparent breakdown, rounding policy text, and persistent localStorage history with full test coverage (26 passing tests).
 
-The record must reflect the actual development process and must not claim work that was not performed.
 
 ---
 
