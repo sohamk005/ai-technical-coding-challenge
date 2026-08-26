@@ -1,13 +1,13 @@
 # AI Technical Coding Challenge Submission
 
-Candidate Name - Soham Gajanan Kulkarni
+**Candidate:** Soham Gajanan Kulkarni
 
-A lightweight web application implementing two practical calculation tools:
+A production-oriented React + TypeScript web application implementing two interactive calculation tools:
 
-* Split Bill Calculator
-* Parking Fee Calculator
+- **Split Bill Calculator** — calculates tip, tax, total, per-person share, and maintains browser-local calculation history.
+- **Parking Fee Calculator** — calculates parking fees using datetime-safe duration handling, tiered pricing, continuous 24-hour caps, vehicle adjustments, and weekend surcharges.
 
-Built with React and TypeScript as part of an AI Technical Coding Challenge.
+The implementation prioritizes functional completeness, separation of concerns, validation, automated testing, responsive UI, and clear documentation within the challenge's 120-minute constraint.
 
 ---
 
@@ -39,6 +39,50 @@ Built with React and TypeScript as part of an AI Technical Coding Challenge.
 * Weekend surcharge
 * Itemized fee breakdown
 * Invalid range handling
+
+---
+
+## Challenge Requirements Coverage
+
+### Task 1 — Split Bill Calculator
+
+| Requirement | Status |
+|---|---|
+| Bill amount input | ✅ |
+| Tip percentage | ✅ |
+| Optional tax | ✅ |
+| Number of people | ✅ |
+| Optional notes | ✅ |
+| Immediate calculation | ✅ |
+| Subtotal | ✅ |
+| Tip amount | ✅ |
+| Tax amount | ✅ |
+| Grand total | ✅ |
+| Per-person amount | ✅ |
+| Transparent breakdown | ✅ |
+| Rounding explanation | ✅ |
+| localStorage history | ✅ |
+| History persistence | ✅ |
+| History clearing | ✅ |
+| Input validation | ✅ |
+
+### Task 2 — Parking Fee Calculator
+
+| Requirement | Status |
+|---|---|
+| Entry datetime | ✅ |
+| Exit datetime | ✅ |
+| Vehicle type | ✅ |
+| Weekend option | ✅ |
+| Midnight-safe duration | ✅ |
+| Multi-day duration | ✅ |
+| Partial-hour billing | ✅ |
+| Tiered pricing | ✅ |
+| Daily cap | ✅ |
+| Vehicle adjustment | ✅ |
+| Weekend surcharge | ✅ |
+| INVALID state | ✅ |
+| Itemized output | ✅ |
 
 ---
 
@@ -78,6 +122,25 @@ Calculation logic is kept independently testable.
 See `ARCHITECTURE.md` for more detail.
 
 ---
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── navigation/
+│   ├── split-bill/
+│   └── parking/
+├── logic/
+│   ├── splitBill.ts
+│   └── parkingFee.ts
+├── services/
+│   └── historyStorage.ts
+├── types/
+│   ├── splitBill.ts
+│   └── parkingFee.ts
+├── App.tsx
+└── main.tsx
 
 ## Split Bill Calculation
 
@@ -342,6 +405,25 @@ The AI prompt history is documented in `prompt.md`.
 
 ---
 
+## Final Verification
+
+The final implementation was verified with:
+
+```bash
+npm test
+npm run typecheck
+npm run build
+
+Results:
+
+62/62 automated tests passing
+TypeScript typecheck passing with zero errors
+Production build passing
+No hardcoded credentials or secrets
+No .env credentials committed
+Task 1 regression tests passing
+Task 2 edge-case tests passing
+
 ## Project Documentation
 
 * `CHALLENGE_REQUIREMENTS.md` — authoritative functional requirements
@@ -351,6 +433,6 @@ The AI prompt history is documented in `prompt.md`.
 
 ---
 
-## License
+## Project Usage
 
 This project was created for the AI Technical Coding Challenge.
