@@ -27,10 +27,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
           aria-selected={activeTab === 'parking'}
           className={`nav-tab-btn ${activeTab === 'parking' ? 'active' : ''}`}
           onClick={() => onSelectTab('parking')}
-          title="Parking Fee Calculator (Milestone 3)"
         >
           Parking Fee Calculator
-          <span className="badge-upcoming">Next</span>
         </button>
       </div>
     </nav>

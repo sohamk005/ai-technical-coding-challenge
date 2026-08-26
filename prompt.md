@@ -241,7 +241,17 @@ Implemented the complete Split Bill feature MVP:
 
 # Prompt 4 — Parking Fee Calculator
 
-*To be added after the parking implementation prompt is given to Antigravity.*
+# Milestone 2 — Parking Fee Calculator
+
+Implemented the complete Parking Fee Calculator MVP:
+- Pure parking calculation module (`src/logic/parkingFee.ts`) with robust datetime arithmetic (`calculateDuration`) properly handling same-day, midnight-crossing, multi-day, and invalid time ranges.
+- Partial-hour upward billing rounding (`Math.ceil(diffMs / 3600000)`).
+- Authoritative tiered hourly base pricing (1st hr: ₹40, hrs 2–4: ₹30/hr, hrs 5–8: ₹20/hr, hrs 9+: ₹15/hr).
+- Continuous 24-hour cycle daily cap (₹250 max per 24h continuous period).
+- Vehicle adjustments: Car (0%), Motorcycle (-20% discount), SUV (+20% surcharge).
+- Weekend surcharge: +10% applied after vehicle adjustment.
+- Transparent itemized breakdown component (`src/components/parking/ParkingBreakdown.tsx`) displaying base rate, cap savings, vehicle adjustment, weekend surcharge, and final fee in ₹ INR.
+- Comprehensive unit tests (`src/logic/parkingFee.test.ts`) covering midnight crossing, multi-day durations, exact and partial hour boundaries, daily cap application, vehicle adjustments, weekend surcharges, and invalid ranges (31 tests, total 57 suite tests passing).
 
 ---
 
@@ -273,6 +283,8 @@ Implemented the complete Split Bill feature MVP:
 
 - **Milestone 0**: Initialized Vite + React + TypeScript + Vitest foundation, verified build and test runners.
 - **Milestone 1**: Implemented Split Bill calculator pure logic, reactive validation, transparent breakdown, rounding policy text, and persistent localStorage history with full test coverage (26 passing tests).
+- **Milestone 2**: Implemented Parking Fee calculator pure logic with datetime duration (midnight-safe), tiered pricing, ₹250 continuous 24h daily cap, vehicle adjustments, weekend surcharge, and itemized breakdown with full test coverage (57 passing tests total).
+
 
 
 ---
