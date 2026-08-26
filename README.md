@@ -2,6 +2,10 @@
 
 **Candidate:** Soham Gajanan Kulkarni
 
+## Live Demo
+
+[ai-technical-coding-challenge.vercel.app](https://ai-technical-coding-challenge.vercel.app/)
+
 A production-oriented React + TypeScript web application implementing two interactive calculation tools:
 
 - **Split Bill Calculator** — calculates tip, tax, total, per-person share, and maintains browser-local calculation history.
