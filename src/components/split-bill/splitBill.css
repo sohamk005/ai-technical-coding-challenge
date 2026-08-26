@@ -166,6 +166,11 @@
   color: #0f172a;
 }
 
+.preset-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .preset-btn.active {
   background-color: #2563eb;
   color: #ffffff;
@@ -198,6 +203,11 @@
 .stepper-btn:hover:not(:disabled) {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.stepper-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .stepper-btn:disabled {
@@ -348,6 +358,11 @@
   background-color: #1e293b;
 }
 
+.btn-save-calculation:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .btn-save-calculation.saved {
   background-color: #16a34a;
 }
@@ -419,6 +434,11 @@
 
 .btn-clear-history:hover {
   background-color: #fef2f2;
+}
+
+.btn-clear-history:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
 }
 
 .history-empty-state {
@@ -538,6 +558,11 @@
   background-color: #dbeafe;
 }
 
+.btn-history-restore:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .btn-history-delete {
   background: none;
   border: 1px solid #e2e8f0;
@@ -556,6 +581,11 @@
   background-color: #fef2f2;
   border-color: #fee2e2;
   color: #ef4444;
+}
+
+.btn-history-delete:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {

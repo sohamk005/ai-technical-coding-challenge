@@ -35,6 +35,11 @@
   color: #1d4ed8;
 }
 
+.scenario-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .datetime-input {
   font-family: inherit;
 }
@@ -63,6 +68,11 @@
 .vehicle-btn:hover {
   background-color: #f1f5f9;
   border-color: #cbd5e1;
+}
+
+.vehicle-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .vehicle-btn.active {
@@ -118,6 +128,11 @@
   height: 18px;
   cursor: pointer;
   accent-color: #2563eb;
+}
+
+.checkbox-input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .checkbox-text-group {

@@ -172,6 +172,58 @@ describe('Parking Fee Calculation Logic', () => {
       const base = calculateContinuousBaseFee(48);
       expect(base.cappedBaseFee).toBe(500);
     });
+
+    it('caps multi-day sessions where remaining partial cycle also exceeds ₹250 (35 hours = 250 + 250 = ₹500)', () => {
+      const base = calculateContinuousBaseFee(35);
+      expect(base.uncappedBaseFee).toBe(705); // 450 + 255
+      expect(base.cappedBaseFee).toBe(500); // 250 + 250
+      expect(base.capSavings).toBe(205);
+    });
+
+    it('calculates exact 24-hour cycle boundary as exactly 1 full capped day (₹250)', () => {
+      const result = calculateParkingFee({
+        entryDatetime: '2026-08-26T10:00',
+        exitDatetime: '2026-08-27T10:00',
+        vehicleType: 'car',
+        isWeekend: false,
+      });
+
+      expect(result.status).toBe('VALID');
+      if (result.status === 'VALID') {
+        expect(result.duration.billableHours).toBe(24);
+        expect(result.finalFee).toBe(250);
+      }
+    });
+
+    it('bills a 1-minute parking session as 1 billable hour', () => {
+      const result = calculateParkingFee({
+        entryDatetime: '2026-08-26T10:00',
+        exitDatetime: '2026-08-26T10:01',
+        vehicleType: 'car',
+        isWeekend: false,
+      });
+
+      expect(result.status).toBe('VALID');
+      if (result.status === 'VALID') {
+        expect(result.duration.billableHours).toBe(1);
+        expect(result.finalFee).toBe(40);
+      }
+    });
+
+    it('bills a 59-minute parking session as 1 billable hour', () => {
+      const result = calculateParkingFee({
+        entryDatetime: '2026-08-26T10:00',
+        exitDatetime: '2026-08-26T10:59',
+        vehicleType: 'car',
+        isWeekend: false,
+      });
+
+      expect(result.status).toBe('VALID');
+      if (result.status === 'VALID') {
+        expect(result.duration.billableHours).toBe(1);
+        expect(result.finalFee).toBe(40);
+      }
+    });
   });
 
   describe('Vehicle Adjustments', () => {

@@ -257,25 +257,33 @@ Implemented the complete Parking Fee Calculator MVP:
 
 # Prompt 5 — Testing and Edge Cases
 
-*To be added after the testing prompt is given to Antigravity.*
+*Automated test suites were designed and expanded in Milestones 1 and 2, and augmented in Milestone 3 with edge cases for large parties, 1-minute and 59-minute partial-hour parking boundaries, dual-cycle daily caps, and 24-hour exact boundary sessions (62 passing tests).*
 
 ---
 
 # Prompt 6 — UI/UX Refinement
 
-*To be added after the UI refinement prompt is given to Antigravity.*
+*Implemented clean, accessible, and responsive styles across navigation tabs, Split Bill breakdowns, rounding policy cards, vehicle toggle pills, and parking breakdowns, with keyboard focus-visible outlines and error alerts.*
 
 ---
 
 # Prompt 7 — Documentation
 
-*To be added after the documentation prompt is given to Antigravity.*
+*All documentation files (`README.md`, `CHALLENGE_REQUIREMENTS.md`, `ARCHITECTURE.md`, `IMPLEMENTATION_PLAN.md`, and `prompt.md`) reviewed and verified for strict consistency with the actual codebase.*
 
 ---
 
 # Prompt 8 — Final QA
 
-*To be added after the final audit prompt is given to Antigravity.*
+# Milestone 3 — Final QA, Bug Fixes and Presentation Polish
+
+Performed exhaustive final verification and QA:
+- Zero regressions in Task 1 (Split Bill Calculator & History) and Task 2 (Parking Fee Calculator).
+- Expanded automated test coverage across edge boundaries (62 total unit tests passing).
+- Verified TypeScript compilation (`tsc --noEmit`) with 0 errors.
+- Verified production build (`tsc && vite build`) succeeding cleanly with no bundle errors or warnings.
+- Verified absence of hardcoded credentials, secrets, or `.env` files.
+- Refined focus-visible keyboard navigation and accessibility attributes.
 
 ---
 
@@ -284,6 +292,7 @@ Implemented the complete Parking Fee Calculator MVP:
 - **Milestone 0**: Initialized Vite + React + TypeScript + Vitest foundation, verified build and test runners.
 - **Milestone 1**: Implemented Split Bill calculator pure logic, reactive validation, transparent breakdown, rounding policy text, and persistent localStorage history with full test coverage (26 passing tests).
 - **Milestone 2**: Implemented Parking Fee calculator pure logic with datetime duration (midnight-safe), tiered pricing, ₹250 continuous 24h daily cap, vehicle adjustments, weekend surcharge, and itemized breakdown with full test coverage (57 passing tests total).
+- **Milestone 3**: Performed final QA audit, augmented test suite to 62 tests covering minute boundaries and multi-day dual cap scenarios, added focus-visible accessibility styling, verified documentation consistency, and validated production build.
 
 
 

@@ -106,6 +106,21 @@ describe('Split Bill Calculation Logic', () => {
       expect(result.notes).toBe('Team lunch at cafe');
     });
 
+    it('calculates correctly for large party sizes and high subtotals', () => {
+      const result = calculateSplitBill({
+        billAmount: 2500.50,
+        tipPercentage: 20,
+        taxPercentage: 10,
+        people: 25,
+      });
+
+      expect(result.subtotal).toBe(2500.50);
+      expect(result.tipAmount).toBe(500.10);
+      expect(result.taxAmount).toBe(250.05);
+      expect(result.grandTotal).toBe(3250.65);
+      expect(result.perPerson).toBe(130.03); // 3250.65 / 25 = 130.026 -> 130.03
+    });
+
     it('throws error for invalid bill amount <= 0', () => {
       expect(() =>
         calculateSplitBill({
